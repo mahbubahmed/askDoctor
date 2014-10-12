@@ -1,0 +1,253 @@
+@import url("bootstrap.min.css");
+@import url("bootstrap.theme.min.css");
+
+html , body {
+	
+	min-height: 100%;
+}
+
+body{
+	
+	font-family: 'Open Sans', sans-serif !important;	
+}
+
+#header {
+	
+	margin-top:4%;
+	margin-bottom:4%;
+}
+.header-top{
+	background-color: #5ABDCD;
+	padding: 10px;
+	border-bottom: 10px solid black;
+}
+
+/* -- Navigation -- */
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    
+    background-color: #5ABDCD;
+}
+
+.nav-pills > li > a {
+    border-radius: 1px;
+}
+
+
+
+
+
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+
+
+
+/* -----    Bootstrap Carousel  ------*/
+.carousel .item {
+    width: 100%; /*slider width*/
+    max-height: 600px; /*slider height*/
+}
+.carousel .item img {
+    width: 100%; /*img width*/
+}
+/*add some makeup*/
+.carousel .carousel-control {
+    background: none;
+    border: none;
+    top: 50%;
+    z-index:10;
+}
+
+.carousel-caption {
+      max-width: 550px;
+      left:10px;      
+      top:50px;
+      color:black;
+     
+      text-shadow:none !important;
+      
+}
+
+.first-caption {
+	font-size:30px;
+	color:white;
+}
+.second-caption {
+	font-size:30px;
+	color:black;
+}
+/*full width container*/
+@media (max-width: 767px) {
+    .block {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+}
+
+
+.modalForm{
+	 padding: 20px;
+}
+
+.error {
+	font-size:11px;
+	color:red;
+}
+.colborder {
+	border-right:1px solid #ddd;
+	
+}
+
+.list-content {
+	padding:20px;	
+}
+
+/* ---------  Ask Question Page ---- */
+
+.commenter {
+	text-align: center;
+}
+.post-time {
+	font-size:11px;
+	color:gray;
+	text-align: right;
+	
+}
+.question-track-id {
+	font-size:11px;
+	color:gray;
+	font-weight: bold;
+	
+}
+
+
+/*------------------------------------------------------*/
+/* Footer styles
+/*------------------------------------------------------*/
+#main-footer {
+  background-color: #3a3c41;
+  padding: 100px 0 30px 0;
+  color: #9ba0aa;
+  line-height: 24px;
+  margin-top:20%;
+}
+#main-footer .widget h3.title {
+  margin-bottom: 30px;
+  color: #f0f5f7;
+  font-size: 18px;
+  font-weight: 700;
+}
+#main-footer .widget p {
+  margin-bottom: 25px;
+}
+#main-footer .widget a {
+  color: #b5bac6;
+}
+#main-footer .widget a:hover {
+  color: #cbd1de;
+}
+#main-footer .widget ul {
+  border-color: #4a4c52;
+}
+#main-footer .widget ul li {
+  border-color: #4a4c52;
+}
+#main-footer .widget .tagcloud a {
+  color: #fff;
+}
+#main-footer .widget label {
+  color: #9ba0aa;
+}
+#main-footer .widget input[type="text"] {
+  background-color: #515359;
+  border: none;
+  padding: 12px 15px;
+  margin-bottom: 13px;
+  width: 100%;
+  color: #fff;
+  outline: none;
+  overflow: hidden;
+}
+#main-footer .widget input[type="text"]:focus {
+  background-color: #696c74;
+}
+#main-footer .widget input[type="submit"] {
+  border: none;
+  background-color: #67c9e0;
+  color: #fff;
+}
+#main-footer .widget input[type="submit"]:hover {
+  background-color: #4dbed9;
+}
+#main-footer .widget .wp-email-capture-widget {
+  margin: 20px 0;
+}
+#main-footer .appoint-widget span {
+  border-bottom: 1px solid #4a4c52;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  display: block;
+}
+#main-footer .appoint-widget span:last-child {
+  border-bottom: none;
+}
+#main-footer #wp_email_capture > form > div {
+  background: transparent !important;
+  color: #e0e0e0;
+  margin: 0 0 15px !important;
+  width: 100%;
+}
+/*------------------------------------------------------*/
+/* Footer Bottom
+/*------------------------------------------------------*/
+.footer-bottom {
+  margin-top: 60px;
+  border-top: 1px solid #4a4c52;
+  padding-top: 26px;
+}
+.footer-bottom p {
+  color: #7a7d86;
+}
+.footer-bottom .footer-social-nav {
+  margin: 0;
+  padding: 0;
+  float: right;
+}
+.footer-bottom .footer-social-nav li {
+  display: inline-block;
+  list-style: none;
+  margin-left: 10px;
+}
+.footer-bottom .footer-social-nav li .fa {
+  font-size: 18px;
+  display: block;
+  text-align: center;
+  line-height: 20px;
+  color: #53565c;
+}
+.footer-bottom .footer-social-nav li .fa:hover {
+  font-size: 20px;
+  color: #fff;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  margin-top: -2px;
+}
+.footer-bottom .footer-social-nav li a {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.footer-bottom .footer-social-nav li a:hover {
+  text-decoration: none;
+}
+/*------------------------------------------------------*/

@@ -1,0 +1,1 @@
+<?php echo Auth::user()->userable_type;?>
