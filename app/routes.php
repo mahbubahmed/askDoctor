@@ -111,6 +111,12 @@ Route::group(array('before'=>'auth'), function(){
     	'as'    => 'doctor-home',
     	'uses'  => 'DoctorController@index'
     	));
+    	
+       	
+    	Route::get('/doctor/question/view/{id}', array(
+    	'as'    => 'doctor-question-view',
+    	'uses'  => 'DoctorController@view_question'
+    			))->where('id', '[0-9]+');
     
     });
     // ------------------------- End of Filtering Doctor -------------

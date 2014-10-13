@@ -4,7 +4,7 @@
 <div class="col-md-12"><hr></div>
 
 <div class="col-md-3">
-@include('layout.patient-sidebar')
+@include('layout.doctor-sidebar')
 </div>
 
 

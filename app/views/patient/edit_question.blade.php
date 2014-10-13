@@ -11,10 +11,10 @@
 <div class="panel-heading">Your Question</div>
 <div style="padding: 40px;">
 
-@if(Session::has('global'))
+@if(Session::has('msg'))
  <div class="alert alert-{{ Session::get('type') }}" role="alert" >
     <a href="#" class="close" data-dismiss="alert">&times;</a>
-	<p>{{ Session::get('global')}}</p>
+	<p>{{ Session::get('msg')}}</p>
 </div>	
  @endif
 

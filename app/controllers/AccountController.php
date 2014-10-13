@@ -158,7 +158,14 @@ class AccountController extends BaseController {
 
     public function getChangePassword() 
     {
-        return View::make('account.password');
+    	if(Auth::user()->user_type == '1') // 1 = patient
+    	{
+        	return View::make('patient.password');
+    	}
+    	elseif (Auth::user()->user_type == '2') // 2 = doctor 
+    	{
+    		return View::make('doctor.password');
+    	}
     }
 
     public function postChangePassword() 

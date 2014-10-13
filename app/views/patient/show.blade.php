@@ -10,11 +10,10 @@
 <div class="panel panel-default">
 <div class="panel-heading">Your Questions</div>
 <div class="list-content">
-@if($records)	
+@if(!$records->isEmpty())	
 <table class="table">
     <thead>
-        <tr>
-           
+        <tr>           
             <th>Title</th>
             <th>Post Date</th>          
         </tr>

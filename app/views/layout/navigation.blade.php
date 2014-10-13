@@ -7,7 +7,12 @@
             	 @if(strtolower(Auth::user()->userable_type) == 'doctor')  
             		<li><a href="{{ URL::route('doctor-home')}}">My Account</a></li>
             	 @else
-            	 <li><a href="{{ URL::route('patient-ask')}}">My Account</a></li>
+            	 	@if(Auth::user()->user_type == '1')
+            	 	<li><a href="{{ URL::route('patient-ask')}}">My Account</a></li>
+            	 	@endif
+            	 	@if(Auth::user()->user_type == '2')
+            	 	<li><a href="{{ URL::route('doctor-home')}}">My Account</a></li>
+            	 	@endif
             	 @endif	           
             <li><a href="{{ URL::route('account-sign-out')}}">Sign Out</a></li>
             @else

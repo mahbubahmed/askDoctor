@@ -10,7 +10,7 @@
 <div class="panel panel-default">
 <div class="panel-heading">Replies To Your Question</div>
 <div class="list-content">
-@if(count($records) > 0)	
+@if(!$records->isEmpty())		
 <table class="table">
     <thead>
         <tr>

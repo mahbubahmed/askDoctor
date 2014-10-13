@@ -47,14 +47,14 @@ class PatientController extends BaseCOntroller {
 			$user = Auth::user();
 			$user->question()->save($question);
 			return Redirect::route('patient-ask')
-			->with('global', 'Your question has been sucessfully posted. Please wait for answer.');
+			->with('msg', 'Your question has been sucessfully posted. Please wait for answer.');
 		}
 		
 	}
 	
 	public function get_question()
 	{
-		$data['records'] = $someUsers = Question::where('patient_id', '=', Auth::user()->id)
+		$data['records'] = Question::where('patient_id', '=', Auth::user()->id)
 										->orderBy('question_id', 'DESC')
 										->paginate(15, array('question_id','question_title','created_at') );
 		
@@ -135,7 +135,7 @@ class PatientController extends BaseCOntroller {
 		
 		if($data['records']->doctor_id != 0):		
 			return Redirect::route('patient-particular-questions',$id)
-			->with(array('type'=>'danger', 'global'=>'You cannot edit your question anymore. Please submit a comment instead.'));
+			->with(array('type'=>'danger', 'msg'=>'You cannot edit your question anymore. Please submit a comment instead.'));
 		endif;
 		
 		$data['category'] = DB::table('category')->orderBy('category_name', 'ASC')->lists('category_name','category_id');
@@ -175,7 +175,7 @@ class PatientController extends BaseCOntroller {
 			
 	
 			return Redirect::route('patient-question-edit',$id)			
-			->with(array('type'=>'success', 'global'=>'Your question has been sucessfully edited')); 
+			->with(array('type'=>'success', 'msg'=>'Your question has been sucessfully edited')); 
 			
 			echo Input::get('imagefile');
 		}

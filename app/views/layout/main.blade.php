@@ -49,8 +49,13 @@
 	    	<div class="header-top"></div>    	
 		    	<div class="container clearfix">        	  
 				        @include('layout.navigation')
+				        @if(Session::has('global'))
+				        <div>{{ Session::get('global')}}</div>
+				        @endif
+				        
 				        @yield('content')				   
-		        </div>        
+		        </div>  
+		              
   		 </div>
   		 
   	 <footer id="main-footer" class="site-footer clearfix">
