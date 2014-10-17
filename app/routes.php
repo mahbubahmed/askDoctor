@@ -106,17 +106,48 @@ Route::group(array('before'=>'auth'), function(){
     // ---------------------- Filtering Doctor ----------------------
     
     Route::group(array('before' => 'role-doctor'), function() {
-    
+    	
+    	// Doctors homepage
     	Route::get('/doctor', array(
     	'as'    => 'doctor-home',
     	'uses'  => 'DoctorController@index'
     	));
     	
-       	
+       	// View A Question
     	Route::get('/doctor/question/view/{id}', array(
     	'as'    => 'doctor-question-view',
     	'uses'  => 'DoctorController@view_question'
+    	))->where('id', '[0-9]+');
+    	
+    	// GET Doctor Answer
+    	Route::get('/doctor/question/answer/{id}', array(
+    	'as'    => 'doctor-question-answer',
+    	'uses'  => 'DoctorController@answer_question_get'
     			))->where('id', '[0-9]+');
+    			
+    	// POST Doctor Answer
+    	Route::post('/doctor/question/answer/', array(
+    			'as'    => 'doctor-question-answer-post',
+    			'uses'  => 'DoctorController@answer_question_post'
+    	));
+    	
+    	// GET See Answers/Replies
+    	Route::get('/doctor/question/{id}', array(
+    	'as'    => 'doctor-question-view',
+    	'uses'  => 'DoctorController@view_question'
+    			))->where('id', '[0-9]+');
+    			
+    	// Replies List GET
+    	Route::get('/doctor/replies', array(
+    	'as'    => 'doctor-replies',
+    	'uses'  => 'DoctorController@replies_get'
+    	));
+    	
+    	// Show All Questions answered by doctor - List GET
+    	Route::get('/doctor/all-question/answered', array(
+    	'as'    => 'doctor-all-question-answered',
+    	'uses'  => 'DoctorController@question_answered_get'
+    	));
     
     });
     // ------------------------- End of Filtering Doctor -------------

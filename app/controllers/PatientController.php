@@ -42,7 +42,8 @@ class PatientController extends BaseCOntroller {
 			$question->question_title = Input::get('question_title');
 			$question->question_details = Input::get('question_details');
 			$question->attachment = Input::get('imagefile');
-			$question->category_id = Input::get('category');			
+			$question->category_id = Input::get('category');
+			$question->doctor_id = NULL;			
 			
 			$user = Auth::user();
 			$user->question()->save($question);
@@ -81,7 +82,7 @@ class PatientController extends BaseCOntroller {
 		$data['doctor'] = Doctor::where('user_id', '=', $doctor_id)
 		->select('profile_img', 'doctor_degree')
 		->first();		
-		
+	
 		return View::make('patient/show_details',$data);
 	}
 	

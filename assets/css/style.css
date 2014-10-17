@@ -1,6 +1,12 @@
 @import url("bootstrap.min.css");
 @import url("bootstrap.theme.min.css");
 
+
+@font-face {
+    font-family: Open Sans;
+    src: url(../fonts/opensans/OpenSans-Regular.ttf);
+}
+
 html , body {
 	
 	min-height: 100%;
