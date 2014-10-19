@@ -100,5 +100,11 @@
     {{Form::token()}}
 </form>
 </div>
+<script>
 
+$("#demo").birthdayPicker({
+	monthFormat: "short",
+	sizeClass: "span2"
+	}); 
+</script>
 @stop

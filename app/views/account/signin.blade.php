@@ -5,6 +5,7 @@
 <h3>Sign In</h3> 
 <hr>
 
+
 <form class="form-horizontal" role="form" action="{{ URL::route('account-sign-in-post')}}" method="post">
     
      <div class="form-group">
@@ -18,7 +19,7 @@
         @endif
         </div>
     </div>
-    
+  
     
      <div class="form-group">
      <label for="password" class="col-sm-3 control-label">Password</label>
@@ -52,4 +53,5 @@
     
 </form>
 </div>
+
 @stop

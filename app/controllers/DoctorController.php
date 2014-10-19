@@ -9,10 +9,11 @@ class DoctorController extends BaseController {
 	
 	public function index()
 	{
+		
 		$row = DB::table('doctors')->where('user_id', '=', Auth::user()->id )->select('selected_categories')->first();
 		
 		$data['records'] = Question::where('doctor_id', '=', NULL)
-										->whereIn('category_id', array($row->selected_categories))
+										->whereIn('category_id', array(0, $row->selected_categories))
 										->orderBy('question_id', 'DESC')
 										->paginate(15, array('question_id','question_title','created_at') );
 		
@@ -87,7 +88,7 @@ class DoctorController extends BaseController {
 			
 			$question = DB::table('questions')->select('doctor_id')->where('question_id', '=', Input::get('questionID')  )->first();
 								
-			if($question->doctor_id == Auth::user()->id || $question->doctor_id = NULL)
+			if($question->doctor_id == Auth::user()->id || empty($question->doctor_id))
 			{				
 				// Insert Answer and Update Question table
 				DB::beginTransaction();
@@ -97,7 +98,7 @@ class DoctorController extends BaseController {
 					if(!Input::get('is_question_booked')):
 					// Update Question Table
 					DB::table('questions')->where('question_id', '=', Input::get('questionID')  )
-					->update(array('doctor_id' => Auth::user()->id ));
+					->update(array('doctor_id' => Auth::user()->id, 'answered_at' => date('Y-m-d') ));
 					endif;
 						
 					// Post Answer to the question
@@ -152,10 +153,43 @@ class DoctorController extends BaseController {
 	{
 		$data['records'] = Question::where('doctor_id', '=', Auth::user()->id)
 		->orderBy('question_id', 'DESC')
-		->paginate(15, array('question_id','question_title','created_at') );
-	
+		->paginate(15, array('question_id','question_title','created_at','answered_at') );
+		
 		return View::make('doctor/show',$data);
 	
+	}
+	
+	public function question_answered_search_get()
+	{
+		return View::make('doctor/date-range');
+	}
+	
+	public function question_answered_search_post()
+	{
+		
+		$validator = Validator::make(Input::all(), array(
+				'date_from' => array('required', 'date_format:"d-m-Y"'),
+				'date_to' => array('required', 'date_format:"d-m-Y"')
+		));
+		
+		if ($validator->fails())
+		{
+				
+			return Redirect::route('doctor-all-question-answered-search')->withErrors($validator)->withInput();
+		}
+		else
+		{			
+			$data['records'] = Question::where('doctor_id', '=', Auth::user()->id)
+			->where('answered_at', '>=', date("Y-m-d", strtotime(Input::get('date_from') ) ) )
+			->where('answered_at', '<=', date("Y-m-d", strtotime(Input::get('date_to') ) ) )
+			->orderBy('question_id', 'DESC')
+			->paginate(15, array('question_id','question_title','created_at','answered_at') );
+			
+			return View::make('doctor/show',$data);		
+			
+		}
+		
+		
 	}
 	
 	

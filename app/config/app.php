@@ -179,6 +179,7 @@ return array(
 		
 	// Custom Configurations - Added Later
 
-	'upload_attachment_url' => 'assets/attachments/',	
+	'upload_attachment_url' => 'assets/attachments/',
+	'website_name' => 'AskDoctorPro',
 
 );

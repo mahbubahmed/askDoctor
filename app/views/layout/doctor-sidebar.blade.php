@@ -3,7 +3,8 @@
 <ul id="sidebar" class="nav"> 
   <li><a href="{{ URL::route('doctor-home')}}">Browse Questions</a></li> 
   <li><a href="{{ URL::route('doctor-replies')}}">Replies ({{ Session::get('num_of_replies') }})</a></li>
-  <li><a href="{{ URL::route('doctor-all-question-answered')}}">Questions Answered</a></li>    
+  <li><a href="{{ URL::route('doctor-all-question-answered')}}">Questions Answered</a></li>
+    <li><a href="{{ URL::route('doctor-all-question-answered-search')}}">Search Answer By Date</a></li>      
   <li><a href="{{ URL::route('account-change-password')}}">Change Password</a></li>            
 </ul>
  </div>

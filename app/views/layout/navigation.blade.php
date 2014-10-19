@@ -16,8 +16,11 @@
             	 @endif	           
             <li><a href="{{ URL::route('account-sign-out')}}">Sign Out</a></li>
             @else
-            <li><a href="{{ URL::route('account-sign-in')}}">Sign In</a></li>
-            <li><a href="{{ URL::route('account-create')}}">Create an account</a></li>
+            <li><a href="{{ URL::route('patient-ask')}}">Ask Question</a></li>
+            <li><a href="{{ URL::route('account-create')}}">Sign Up</a></li>
+            <li><a href="{{ URL::route('home')}}">About Us</a></li>
+            <li><a href="{{ URL::route('home')}}">Blog</a></li>
+            <li><a href="{{ URL::route('home')}}">Contact</a></li>
             @endif
          </ul>
       </nav>

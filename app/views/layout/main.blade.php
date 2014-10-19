@@ -2,19 +2,24 @@
 <html>
     <head>
     	<meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Authentication System</title>
+        <title>{{ Config::get('app.website_name') }}</title>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>  
-        {{ HTML::style('assets/css/style.css') }}
+        {{ HTML::style('assets/css/style.css') }}     
+        {{ HTML::style('assets/css/datepicker3.css') }}
         {{ HTML::script('assets/js/jquery-1.11.1.min.js') }}
         {{ HTML::script('assets/js/bootstrap.min.js') }}
         {{ HTML::script('assets/js/bootstrap-filestyle.min.js') }}
-        {{ HTML::script('assets/js/spin.min.js') }}           
-     
+        {{ HTML::script('assets/js/spin.min.js') }}
+        {{ HTML::script('assets/js/bootstrap-datepicker.js') }}       
+        {{ HTML::script('assets/js/jquery-birthday-picker.min.js') }}      
+  
+        
         <script>
+        $("#demo").birthdayPicker();   	
         $(function() {           
         	$("#carousel").carousel();
         	$(":file").filestyle(); 
-
+		
 
         	var opts = {
         			  lines: 13, // The number of lines to draw
@@ -38,7 +43,7 @@
         			var target = document.getElementById('searching_spinner_center');
         			var spinner = new Spinner(opts).spin(target);
 
-        	      	
+        			
         });
         
         </script> 

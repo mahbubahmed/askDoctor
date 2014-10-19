@@ -148,6 +148,19 @@ Route::group(array('before'=>'auth'), function(){
     	'as'    => 'doctor-all-question-answered',
     	'uses'  => 'DoctorController@question_answered_get'
     	));
+    	
+    	
+    	// Date Picker Page  - List GET
+    	Route::get('/doctor/all-question/answered/search', array(
+    	'as'    => 'doctor-all-question-answered-search',
+    	'uses'  => 'DoctorController@question_answered_search_get'
+    	));
+    	
+    	// Date Picker Page  - List GET
+    	Route::post('/doctor/all-question/answered/search', array(
+    	'as'    => 'doctor-all-question-answered-search',
+    	'uses'  => 'DoctorController@question_answered_search_post'
+    	));
     
     });
     // ------------------------- End of Filtering Doctor -------------
